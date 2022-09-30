@@ -1,0 +1,33 @@
+name: Build
+on:
+  push:
+    tags: [v*]
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.5.1
+      - name: Change directory
+        shell: bash
+        run: |
+          cd script/
+      - name: Build
+        shell: bash
+        run: ./build.sh
+      - name: Package
+        shell: bash
+        run: |
+          tar czvf JavaPractice.tgz ./bin
+          zip -r JavaPractice.zip ./bin
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            JavaPractice.tgz
+            JavaPractice.zip
