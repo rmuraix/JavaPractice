@@ -12,13 +12,16 @@ jobs:
       - uses: actions/checkout@v3
       - name: Setup Java JDK
         uses: actions/setup-java@v3.5.1
+        with:
+          distribution: 'zulu'
+          java-version: '8'
       - name: Change directory
         shell: bash
         run: |
           cd script/
       - name: Build
         shell: bash
-        run: ./build.sh
+        run: ./script/build.sh
       - name: Package
         shell: bash
         run: |
