@@ -5,6 +5,7 @@ public class P04Ex05 {
         TurtleFrame f = new TurtleFrame();
         Turtle m = new Turtle();
         f.add(m);
+        m.rt(45);
         for (int i = 2; i < 10; i++){
             m.fd(50);
             draw(i + 1, m);
