@@ -2,12 +2,12 @@ import tg.*;
 import javafx.scene.paint.Color;
 
 public class P04Ex06 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         TurtleFrame f = new TurtleFrame();
         Turtle m = new Turtle();
         int i = 0;
         f.add(m);
-        for (;;){
+        for (;;) {
             m.up();
 
             Point p = f.getMousePosition();
@@ -15,17 +15,17 @@ public class P04Ex06 {
 
             i++;
 
-            if(i % 3 == 0){
+            if (i % 3 == 0) {
                 m.setColor(Color.RED);
-            }else if (i % 3 == 1) {
+            } else if (i % 3 == 1) {
                 m.setColor(Color.GREEN);
-            }else{
+            } else {
                 m.setColor(Color.YELLOW);
             }
 
             m.down();
             // drawing star
-            for(int k = 0; k < 5; k++){
+            for (int k = 0; k < 5; k++) {
                 m.rt(144.0);
                 m.fd(50.0);
             }
