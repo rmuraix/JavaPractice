@@ -1,8 +1,8 @@
 import tg.*;
 
 public class P03Ex05 {
-    public static void main(String[] args){
-        TurtleFrame f =  new TurtleFrame();  
+    public static void main(String[] args) {
+        TurtleFrame f = new TurtleFrame();
         Turtle m = new Turtle();
         f.add(m);
         m.up();

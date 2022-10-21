@@ -1,12 +1,16 @@
 import tg.*;
 import javafx.scene.paint.Color;
 
-public class P04Ex06 {
+public class P05Ex08 {
     public static void main(String[] args) {
         TurtleFrame f = new TurtleFrame();
         Turtle m = new Turtle();
-        int i = 0;
+        Turtle.speedAll(1);
+        Turtle.withTurtleAll = false;
         f.add(m);
+
+        int i = 0;
+
         for (;;) {
             m.up();
 
@@ -24,10 +28,14 @@ public class P04Ex06 {
             }
 
             m.down();
-            // drawing star
-            for (int k = 0; k < 5; k++) {
-                m.rt(144.0);
-                m.fd(50.0);
+
+            Long n = Math.round((Math.random() + 1) * 3);
+
+            System.out.println(n + "ŠpŒ`" + "(" + Math.round(p.x) + "," + Math.round(p.y) + ")");
+
+            for (int k = 0; k < n; k++) {
+                m.lt(360 / n);
+                m.fd(50);
             }
         }
     }
