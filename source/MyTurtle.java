@@ -9,10 +9,11 @@ public class MyTurtle extends HTurtle {
             this.fd(s);
         }
     }
+
     // Number of angles, Number of shape, Length, Space bitween shapes
     public void polygons(int n, int m, double s, double w) {
 
-        for (int i = 0; i < m; i++){
+        for (int i = 0; i < m; i++) {
             // draw shape
             this.polygon(n, s);
 
@@ -23,11 +24,12 @@ public class MyTurtle extends HTurtle {
             this.rt(180.0);
             this.down();
         }
-        
+
     }
+
     // size, Number of houses, Space bitween houses
-    public void houses(double s, int n, double w){
-        for (int i = 0; i < n; i++){
+    public void houses(double s, int n, double w) {
+        for (int i = 0; i < n; i++) {
             this.house(s);
 
             this.up();
