@@ -1,7 +1,7 @@
 import tg.*;
 
 // Extend HTurtle
-public class MyTurtle extends HTurtle {
+public class MyTurtle extends HTurtle1 {
     public void star(double s) { // Define polygon method
         // draw star
         for (int i = 0; i < 5; i++) {
@@ -28,9 +28,10 @@ public class MyTurtle extends HTurtle {
     }
 
     // size, Number of houses, Space bitween houses
-    public void houses(double s, int n, double w) {
+    public double houses(double s, int n, double w) {
+        double len = 0.0;
         for (int i = 0; i < n; i++) {
-            this.house(s);
+            len = this.house(s);
 
             this.up();
             this.rt(90.0);
@@ -40,5 +41,6 @@ public class MyTurtle extends HTurtle {
             this.down();
 
         }
+        return len;
     }
 }
