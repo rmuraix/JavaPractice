@@ -1,12 +1,25 @@
 
 // Extend HTurtle
 public class MyTurtle extends HTurtle1 {
+    /** コンストラクタ,練習問題 5.13 で追加。*/  
+    public MyTurtle(double x, double y, double angle) {
+        super(x, y, angle);
+    }
+
+    /**
+     * このコンストラクタがないと,サブクラスでデフォルトのコンストラクタが使えなくなる。*/
+     
+
+    public MyTurtle() {
+        super();
+    }
+
     public void star(double s) { // Define polygon method
         // draw star
         for (int i = 0; i < 5; i++) {
             this.fd(s);
             this.rt(144.0);
-            
+
         }
     }
 
@@ -82,15 +95,16 @@ public class MyTurtle extends HTurtle1 {
         super.house(s);
     }
 
-    public void flower( int n, double s, double r){
-        for(int i = 0; i < r; i++){
+    public void flower(int n, double s, double r) {
+        for (int i = 0; i < r; i++) {
             super.polygon(n, s);
             rt(360 / r);
         }
     }
+
     // size, number of stars, Space bitween stars
-    public void stars(double s, int n, double w){
-        for (int i = 0; i < n; i++){
+    public void stars(double s, int n, double w) {
+        for (int i = 0; i < n; i++) {
             this.star(s);
             this.up();
             // reset angle
@@ -101,4 +115,5 @@ public class MyTurtle extends HTurtle1 {
             this.down();
         }
     }
+
 }
