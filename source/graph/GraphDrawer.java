@@ -1,5 +1,7 @@
 package graph;
+import math.*;
 
+import math.Newton;
 import tg.*;
 
 public class GraphDrawer {
@@ -9,8 +11,18 @@ public class GraphDrawer {
         return a * x * (1 - x);
     }
     double fun1(double x){
-        return -a * x * (1 - x);
+        return -a * x * (1 - x) + 1;
     }
+    double funnewton(double x){
+        return Newton.newton(x);
+    }
+    double funcircleX(double x){
+        return 0.5 * Math.cos(Math.toRadians(x)) + 0.5;
+    }
+    double funcircleY(double x){
+        return 0.5 * Math.sin(Math.toRadians(x)) + 0.5;
+    }
+    
 
     double width = 400; // 画面の横幅
     TurtleFrame f;
@@ -35,10 +47,10 @@ public class GraphDrawer {
     class GTurtle extends Turtle { // 内部クラスGTurtle
         void drawGraph() { // グラフ描画メソッド
             up();
-            dMoveTo(0, fun1(0));
+            dMoveTo(funcircleX(0), funcircleY(0));
             down();
-            for (double x = 0; x < 1; x += 1 / width) {
-                dMoveTo(x, fun1(x));
+            for (double x = 0; x < 360; x++) {
+                dMoveTo(funcircleX(x), funcircleY(x));
             }
         } // グラフ内座標を用いた移動メソッド
 
