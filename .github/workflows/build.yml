@@ -21,13 +21,6 @@ jobs:
           while read -r f; do
             javac -encoding SJIS "$f" -d ${{github.workspace}}/bin
           done < <(find . -mindepth 1 -maxdepth 1 -type f -name "*.java")
-          for dir in $(find . -type d -not -name 'tg' | awk '{print $NF}'); do
-            cd "${dir}" || exit
-            while read -r f; do
-              javac -encoding SJIS "$f" -d ${{github.workspace}}/bin
-            done < <(find . -mindepth 1 -maxdepth 1 -type f -name "*.java")
-            cd ${{github.workspace}}/source
-          done
           cd ${{github.workspace}}
       - uses: actions/upload-artifact@v3
         with:
